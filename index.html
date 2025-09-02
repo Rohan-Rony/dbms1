@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parking Allocation DBMS</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>🚗 Parking Allocation System</h1>
+    <p>Manage staff, parking lots, slots, vehicles & allocations easily</p>
+  </header>
+
+  <nav>
+    <button class="tab-btn" data-tab="staff">Staff</button>
+    <button class="tab-btn" data-tab="parkinglot">Parking Lots</button>
+    <button class="tab-btn" data-tab="parkingslot">Parking Slots</button>
+    <button class="tab-btn" data-tab="vehicles">Vehicles</button>
+    <button class="tab-btn" data-tab="allocation">Allocations</button>
+  </nav>
+
+  <!-- Staff Section -->
+  <section id="staff" class="tab-content">
+    <h2>Staff</h2>
+    <form>
+      <input type="text" placeholder="Staff Number">
+      <input type="text" placeholder="Staff Name">
+      <input type="text" placeholder="Phone No">
+      <input type="text" placeholder="Lot Number">
+      <button type="button">Add Staff</button>
+    </form>
+    <table>
+      <thead>
+        <tr>
+          <th>Staff Number</th>
+          <th>Staff Name</th>
+          <th>Phone No</th>
+          <th>Lot Number</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </section>
+
+  <!-- Parking Lot Section -->
+  <section id="parkinglot" class="tab-content hidden">
+    <h2>Parking Lots</h2>
+    <form>
+      <input type="text" placeholder="Lot Number">
+      <input type="number" placeholder="Number of Slots">
+      <input type="text" placeholder="Staff Number">
+      <button type="button">Add Lot</button>
+    </form>
+    <table>
+      <thead>
+        <tr>
+          <th>Lot Number</th>
+          <th>Number of Slots</th>
+          <th>Staff Number</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </section>
+
+  <!-- Parking Slots Section -->
+  <section id="parkingslot" class="tab-content hidden">
+    <h2>Parking Slots</h2>
+    <form>
+      <input type="text" placeholder="Slot Number">
+      <input type="text" placeholder="Lot Number">
+      <button type="button">Add Slot</button>
+    </form>
+    <table>
+      <thead>
+        <tr>
+          <th>Slot Number</th>
+          <th>Lot Number</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </section>
+
+  <!-- Vehicles Section -->
+  <section id="vehicles" class="tab-content hidden">
+    <h2>Vehicles</h2>
+    <form>
+      <input type="text" placeholder="Vehicle Number">
+      <input type="text" placeholder="Customer Name">
+      <input type="text" placeholder="Vehicle Name">
+      <button type="button">Add Vehicle</button>
+    </form>
+    <table>
+      <thead>
+        <tr>
+          <th>Vehicle Number</th>
+          <th>Customer Name</th>
+          <th>Vehicle Name</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </section>
+
+  <!-- Allocation Section -->
+  <section id="allocation" class="tab-content hidden">
+    <h2>Allocations</h2>
+    <form>
+      <input type="text" placeholder="Vehicle Number">
+      <input type="text" placeholder="Slot Number">
+      <input type="datetime-local" placeholder="Check-in Time">
+      <input type="datetime-local" placeholder="Check-out Time">
+      <button type="button">Allocate</button>
+    </form>
+    <table>
+      <thead>
+        <tr>
+          <th>Vehicle Number</th>
+          <th>Slot Number</th>
+          <th>Check-in Time</th>
+          <th>Check-out Time</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+

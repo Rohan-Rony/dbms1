@@ -1,0 +1,43 @@
+-- Staff Table
+CREATE TABLE staff (
+    staffnumber VARCHAR(10) PRIMARY KEY,
+    staffname VARCHAR(100) NOT NULL,
+    phoneno VARCHAR(15) NOT NULL,
+    lotnumber VARCHAR(10)
+);
+
+-- Parking Lot Table
+CREATE TABLE parkinglot (
+    lotnumber VARCHAR(10) PRIMARY KEY,
+    numberofslots INT NOT NULL,
+    staffnumber VARCHAR(10) NOT NULL,
+    FOREIGN KEY (staffnumber) REFERENCES staff(staffnumber)
+);
+
+-- Parking Slots Table
+CREATE TABLE parkingslot (
+    slotnumber VARCHAR(10) PRIMARY KEY,
+    lotnumber VARCHAR(10) NOT NULL,
+    FOREIGN KEY (lotnumber) REFERENCES parkinglot(lotnumber)
+);
+
+-- Vehicles Table
+CREATE TABLE vehicles (
+    vehiclenumber VARCHAR(20) PRIMARY KEY,
+    customername VARCHAR(100) NOT NULL,
+    vehiclename VARCHAR(100) NOT NULL
+);
+
+-- Allocation Table
+CREATE TABLE allocation (
+    vehiclenumber VARCHAR(20),
+    slotnumber VARCHAR(10),
+    checkin_time DATETIME,
+    checkout_time DATETIME,
+    PRIMARY KEY (vehiclenumber, slotnumber),
+    FOREIGN KEY (vehiclenumber) REFERENCES vehicles(vehiclenumber),
+    FOREIGN KEY (slotnumber) REFERENCES parkingslot(slotnumber)
+);
+
+
+
